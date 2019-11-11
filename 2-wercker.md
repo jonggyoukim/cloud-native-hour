@@ -219,31 +219,31 @@ oke:
 
 # Wercker를 통해 자동배포하기
 
-1. 샘플 애플리케이션을 수정하기 위해서 수정할 파일에 접근한다.
+1. 자신의 github/cloud-native-oke 로 이동한다.
 
-    ~~~
-    cd cloud-native-oke/routes
-    ~~~
+    ![](images/wercker17.png)
 
-1. version.js 파일을 수정한다.
+1. "routes" 디렉토리를 클릭한다.
 
-    ~~~
-    vi version.js
-    ~~~
+    ![](images/wercker18.png)
 
-    아래의 항목 중 1.0 을 변경하고 저장한다. (예:2.0)
-    ~~~node
-    var version = "1.0"; <--- 수정 
-    exports.version = version;
-    ~~~
+1. "version.js" 를 클릭한다.
 
-1. git 에 push 한다.
+    ![](images/wercker16.png)
 
-    ~~~
-    git add .
-    git commit -m update_version
-    git push
-    ~~~
+1. Edit 아이콘을 누른다.
+
+    ![](images/wercker15.png)
+
+
+1. "1.0"을 자신의 아이디를 포함해서 업데이트 한다.
+
+    ![](images/wercker14.png)
+
+
+1. 아래의 "Commit changes"를 눌러 반영한다.
+
+    ![](images/wercker13.png)
 
 1. wercker 에서 자동으로 CI/CD가 동작되는 것을 확인한다.
 
