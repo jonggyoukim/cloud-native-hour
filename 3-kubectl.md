@@ -1,5 +1,12 @@
 # Kubectl로 살펴보기
 
+## dashboard 접속하기
+
+브라우저를 이용하여 다음 URL을 이용하여 kubernets dashboard에 접속합니다.
+~~~
+http://132.145.89.83:8001/api/v1/namespaces/kube-system/services/https:kubernetes-dashboard:/proxy/#!/login
+~~~
+
 
 ## 기본 namespace 바꾸기
 
