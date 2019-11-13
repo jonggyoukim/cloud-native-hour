@@ -3,7 +3,7 @@
 
 ## 필요파일을 다운로드
 - [putty](https://the.earth.li/~sgtatham/putty/latest/w64/putty.exe)
-- [privatekey.ppk](files/privatekey.zip)
+- [privatekey.ppk](https://github.com/jonggyoukim/cloud-native-hour/raw/master/files/privateKey.zip) - zip 파일을 풀어주세요.
 
 ## Putty로 인스턴스에 접속
 
