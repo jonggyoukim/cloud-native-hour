@@ -23,7 +23,7 @@
 
 
 
-## 기본 namespace 바꾸기
+## Namespace를 이용하여 상태보기
 
 - 전체 namespace 보기
 
@@ -39,13 +39,6 @@
     ~~~
 
 - 현재 설정보기
-
-    ~~~
-    $ kubectl config get-contexts
-
-    CURRENT   NAME                  CLUSTER               AUTHINFO           NAMESPACE
-    *         context-c2daobzgnrd   cluster-c2daobzgnrd   user-c2daobzgnrd
-    ~~~
     
     ~~~
     $ kubectl get all
@@ -54,37 +47,29 @@
     service/kubernetes   ClusterIP   10.96.0.1    <none>        443/TCP   7h6m
     ~~~
 
-- 기본 namespace 바꾸기 
-
+- namespace를 이용하여 상태보기
     ~~~
-    $ kubectl config set-context --current --namespace jonggyoukim
-
-    Context "context-c2daobzgnrd" modified.
+    kubectl get all -n {영문이름}
     ~~~
 
-- 확인
+    ~~~
+    $ kubectl get all -n jonggyoukim
 
-    ~~~
-    $ kubectl config get-contexts
-
-    CURRENT   NAME                  CLUSTER               AUTHINFO           NAMESPACE
-    *         context-c2daobzgnrd   cluster-c2daobzgnrd   user-c2daobzgnrd   jonggyoukim
-    ~~~
-    
-    ~~~
-    $ kubectl get all
 
     NAME                              READY   STATUS    RESTARTS   AGE
-    pod/oke-sample-7bdd498bd7-fqrkx   1/1     Running   0          13m
+    pod/oke-sample-8449649f78-bbm24   1/1     Running   0          178m
 
-    NAME                 TYPE           CLUSTER-IP     EXTERNAL-IP      PORT(S)          AGE
-    service/oke-sample   LoadBalancer   10.96.246.11   150.136.200.30   8080:30192/TCP   13m
+    NAME                 TYPE           CLUSTER-IP     EXTERNAL-IP    PORT(S)          AGE
+    service/oke-sample   LoadBalancer   10.96.46.121   140.238.6.44   8080:32742/TCP   3h17m
 
-    NAME                         DESIRED   CURRENT   UP-TO-DATE   AVAILABLE   AGE
-    deployment.apps/oke-sample   1         1         1            1           13m
+    NAME                         READY   UP-TO-DATE   AVAILABLE   AGE
+    deployment.apps/oke-sample   1/1     1            1           3h17m
 
     NAME                                    DESIRED   CURRENT   READY   AGE
-    replicaset.apps/oke-sample-7bdd498bd7   1         1         1       13m
+    replicaset.apps/oke-sample-57469857fc   0         0         0       3h2m
+    replicaset.apps/oke-sample-5b4489d789   0         0         0       3h17m
+    replicaset.apps/oke-sample-64696785c    0         0         0       3h6m
+    replicaset.apps/oke-sample-8449649f78   1         1         1       178m
     ~~~
 
 ## Kubectl
@@ -92,7 +77,7 @@
 - 전체 리소스 보기
 
     ~~~
-    $ kubectl get all
+    $ kubectl get all -n jonggyoukim
 
     NAME                              READY   STATUS    RESTARTS   AGE
     pod/oke-sample-7bdd498bd7-fqrkx   1/1     Running   0          13m
@@ -110,7 +95,7 @@
 - POD 자세히 보기
 
     ~~~
-    $ kubectl describe pod/oke-sample-7bdd498bd7-fqrkx
+    $ kubectl describe pod/oke-sample-7bdd498bd7-fqrkx -n jonggyoukim
 
     Name:               oke-sample-7bdd498bd7-fqrkx
     Namespace:          jonggyoukim
@@ -171,12 +156,12 @@
 - POD 늘이기
 
     ~~~
-    $ kubectl scale deployments/oke-sample --replicas=4
+    $ kubectl scale deployments/oke-sample --replicas=4 -n jonggyoukim
     ~~~
 
 - POD 늘이기 확인
     ~~~
-    $ kubectl get all
+    $ kubectl get all -n jonggyoukim
     NAME                              READY   STATUS              RESTARTS   AGE
     pod/oke-sample-7bdd498bd7-98bkm   1/1     Running             0          7s
     pod/oke-sample-7bdd498bd7-fqrkx   1/1     Running             0          5h58m
@@ -193,3 +178,7 @@
     replicaset.apps/oke-sample-7bdd498bd7   4         4         2       5h58m
     ~~~
 
+- 브라우저로 접속하여 내부 IP가 바뀌는 것을 경험합니다.
+
+---
+완료하셨습니다.
