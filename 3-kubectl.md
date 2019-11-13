@@ -1,16 +1,27 @@
 # Kubectl로 살펴보기
 
-## dashboard 접속하기
 
-1. 브라우저를 이용하여 다음 URL을 이용하여 kubernets dashboard에 접속합니다.
-    ~~~
-    http://132.145.89.83:8001/api/v1/namespaces/kube-system/services/https:kubernetes-dashboard:/proxy/#!/login
-    ~~~
+## 필요파일을 다운로드
+- [putty](https://the.earth.li/~sgtatham/putty/latest/w64/putty.exe)
+- [privatekey.ppk](./files/privatekey.zip)
 
-1. Token 에 다음의 토큰을 입력합니다.
-    ~~~
-    eyJoZWFkZXIiOnsiQXV0aG9yaXphdGlvbiI6WyJTaWduYXR1cmUgYWxnb3JpdGhtPVwicnNhLXNoYTI1NlwiLGhlYWRlcnM9XCJkYXRlIChyZXF1ZXN0LXRhcmdldCkgaG9zdCBjb250ZW50LWxlbmd0aCBjb250ZW50LXR5cGUgeC1jb250ZW50LXNoYTI1NlwiLGtleUlkPVwib2NpZDEudGVuYW5jeS5vYzEuLmFhYWFhYWFhN2tieWI3bHp3MjZsZXBra2V0bXZiZXV5b3hwYXBlZjdwNHZmaXRnZnk3a2p4b3BocGU0YS9vY2lkMS51c2VyLm9jMS4uYWFhYWFhYWFzdjJyZnpnbGVobGxxaHhmYmxtanRqcWUzbXFoMzYyeHc2ZHRmcWhhMzR3cmt4bG9xY3hxLzJkOmFiOjViOjMzOjI0OjVmOjU3OjIyOmRiOjA4OmUzOmFkOmRiOjZjOjU1OjFhXCIsc2lnbmF0dXJlPVwiTlUwK0gvekZzVDBydFRFYlQ3TjVxbmpOR05pMThYYzdpeVVMMlhBdXBaWmsycWtvcUdPU21uTEl0NUJmRjBiODFjaGV3aHJicDBYaFVpZ0RHdjZVRHpueXVFOGxzbnF1T1ArcWlOK3J1OGRuenZRT2ZQZFkzYVhPMEs3UC9QTFV2VU10Yy9ZSUppOXNRVW1rdUVkc1dyOWNURC9kRDBKY0MxRUpIWVJ0ZzZWakJxZGN6djJCdklVRm1wWTJRZ1hyRkJPbDgzdkNZbytsK2dIWTFsRUYwa2NDYi9oMWpsQUpNTWRtVjdUa0h3c0hDZ3JObmVFTGh4Z0w2emdzRzVEeXloeUpEWTYyODQrU2FIUGlLM1ZuS2xrRnNzOVpldlJVdUV4dzhVcHdRanRvV2c4UFdscTMvS0VlMHJCbVlkQkZ5cHovUFlUbDNOcEFPcDIyWjg2WVVnPT1cIix2ZXJzaW9uPVwiMVwiIl0sIkNvbnRlbnQtTGVuZ3RoIjpbIjI1Il0sIkNvbnRlbnQtVHlwZSI6WyJhcHBsaWNhdGlvbi9qc29uIl0sIkRhdGUiOlsiU2F0LCAwOSBOb3YgMjAxOSAxNTozMDo0NCBHTVQiXSwiWC1Db250ZW50LVNoYTI1NiI6WyJHbFZ1ZDlXZ0I0dXZVMTJvVkJnNGhzZkR4V3dKTVYxaXZmMDZyTEhKSHkwPSJdfSwiYm9keSI6eyJ0b2tlblZlcnNpb24iOiIxLjAuMCIsImV4cGlyYXRpb24iOjI1OTIwMDAwMDAwMDAwMDB9LCJob3N0IjoiY29udGFpbmVyZW5naW5lLmFwLXNlb3VsLTEub3JhY2xlY2xvdWQuY29tIiwicmVxdWVzdF91cmkiOiIvMjAxODAyMjIvY2x1c3RlcnMvb2NpZDEuY2x1c3Rlci5vYzEuYXAtc2VvdWwtMS5hYWFhYWFhYWFmdGdlbmpxaGJzZGNtZGVncXl3Z3pydW16c2RnbmpzZ20zZGd6cnpnY3F0a25ieG12dGcva3ViZWNvbmZpZy9jb250ZW50In0=
-    ~~~
+## Putty로 인스턴스에 접속
+
+1. **Session** 구역에서 compute instance의 public ip와 포트를 설정합니다.
+
+    ![Alt text](images/putty1.png)
+
+1. **Connection > SSH > Auth** 구역에서 ppk 파일 위치를 설정합니다.
+
+    ![Alt text](images/putty2.png)
+
+1. 하단부의 **Open**을 눌러 인스턴스에 접속합니다.
+
+    접속된 후 login as : 부분에 **opc** 를 입력하면 로그인 됩니다.
+
+    ![Alt text](images/putty3.png)
+
+
 
 ## 기본 namespace 바꾸기
 
