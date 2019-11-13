@@ -38,7 +38,7 @@
     kube-system     Active   173d
     ~~~
 
-- 현재 설정보기
+- 현재 상태보기
     
     ~~~
     $ kubectl get all
@@ -46,6 +46,11 @@
     NAME                 TYPE        CLUSTER-IP   EXTERNAL-IP   PORT(S)   AGE
     service/kubernetes   ClusterIP   10.96.0.1    <none>        443/TCP   7h6m
     ~~~
+
+    애플리케이션의 상태는 보이지 않습니다.
+    애플리케이션이 CI/CD를 통해서 배포를 했으나 Kubernets의 namespace를 사용하였습니다.  
+
+    namespace의 이름은 입력한 **{영문이름}** 입니다.
 
 - namespace를 이용하여 상태보기
     ~~~
@@ -72,7 +77,7 @@
     replicaset.apps/oke-sample-8449649f78   1         1         1       178m
     ~~~
 
-## Kubectl
+## kubectl
 
 - 전체 리소스 보기
 
