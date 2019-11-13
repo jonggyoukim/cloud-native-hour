@@ -1,5 +1,9 @@
 # Wercker 생성
 
+![](images/step2.png)
+
+![](images/step3.png)
+
 오라클 컨테이너 기반 CI(Continuous Integration) 서비스인 Wercker를 사용하여 컨테이너 이미지 빌드, 테스트와 쿠버네티스 환경에 배포를 자동화하는 시나리오입니다.
 
 Wercker 계정에 로그인을 합니다.  
@@ -79,10 +83,17 @@ CI/CD 에서 어떤 작업을 할 것인지 정의하는 것을 pipeline 이라 
 
 ![](images/wercker21.png)
 
+
+![](images/step2.png)
+
 - **Name** : deploy
 - **YML Pipeline name:** : deploy
 
-"Create" 버튼을 눌러 완성한다.  그리고 oke 도 만든다.
+"Create" 버튼을 눌러 완성한다.  
+
+그리고 oke 도 만든다.
+
+![](images/step3.png)
 
 - **Name** : oke
 - **YML Pipeline name:** : oke
