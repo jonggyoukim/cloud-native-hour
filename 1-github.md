@@ -1,6 +1,9 @@
 
 # Github Account 생성 및 로그인
 
+![](images/step1.png)
+
+
 1. [https://github.com](https://github.com) 에 접속하여 로그인을 합니다.
 
 1. 계정이 없으시면 "Sign up" 을 눌러서 계정을 생성합니다.
