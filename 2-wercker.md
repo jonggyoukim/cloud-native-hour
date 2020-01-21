@@ -260,6 +260,29 @@ oke:
 
     ![](images/wercker26.png)
 
+
+## 필요파일을 다운로드
+- [putty](https://the.earth.li/~sgtatham/putty/latest/w64/putty.exe)
+- [privatekey.ppk](https://github.com/jonggyoukim/cloud-native-hour/raw/master/files/privateKey.zip) - zip 파일을 풀어주세요.
+
+## Putty로 인스턴스에 접속
+
+1. **Session** 구역에서 compute instance의 public ip와 포트를 설정합니다.
+
+    ![Alt text](images/putty1.png)
+
+1. **Connection > SSH > Auth** 구역에서 ppk 파일 위치를 설정합니다.
+
+    ![Alt text](images/putty2.png)
+
+1. 하단부의 **Open**을 눌러 인스턴스에 접속합니다.
+
+    접속된 후 login as : 부분에 **opc** 를 입력하면 로그인 됩니다.
+
+    ![Alt text](images/putty3.png)
+
+
+
 1. kubectl 로 IP가 할당됨을 확인한다.
 
     ~~~
@@ -297,6 +320,10 @@ oke:
     ~~~
 
 1. IP를 확인하고 접속해서 버젼이 바뀌어 있는지 확인한다.
+
+브라우저로 접속하여 확인해 본다. 
+
+- http://{External-IP}:8080
 
 ---
 완료하셨습니다.
